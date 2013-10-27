@@ -1,0 +1,34 @@
+extends layout
+
+block content
+
+  if status == "success"
+    h1
+      a(href="/") Create new user
+  else
+    h1 Create new user
+  
+  if !status
+    include form
+
+  if status == "success"
+    h2 Success
+    p name: #{user.name}
+    p email: #{user.email}
+    p password: *****
+
+    if(user.imageID != 'undefined')
+      p <img width="100" height="100" src="http://res.cloudinary.com/dppy0fyoh/image/upload/c_scale,h_100,w_100/#{user.imageID}.jpg">
+  
+  if status == "error"
+    h3 Error
+    .error-container
+      each error in errors
+        p= error.msg
+    include form
+  
+
+block scripts
+  script.
+    // Configure Cloudinary
+    $.cloudinary.config({ api_key: '!{api_key}', cloud_name: '!{cloud_name}' });

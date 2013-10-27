@@ -1,0 +1,21 @@
+form(action="/", method="post", enctype="multipart/form-data", class="form-group")
+  .form-group
+    label Firstname/Lastname 
+    input(type="text", name="name", value="#{user.name}", class="form-control")
+  .form-group
+    label Email 
+    input(type="text", name="email", value="#{user.email}", class="form-control")
+  .form-group
+    label Password 
+    input(type="password", name="password", value="#{user.password}", class="form-control")
+  .form-group
+    label Upload/Preview Image 
+    form(enctype="multipart/form-data")!=cloudinary.uploader.image_upload_tag('image')
+    input(type="hidden", class="image-id" name="image_id", value="#{user.imageID}")
+    .image-preview
+      if(user.imageID != '')
+        <img width="100" height="100" src="http://res.cloudinary.com/dppy0fyoh/image/upload/c_scale,h_100,w_100/#{user.imageID}.jpg">
+    input(type="submit", value="Submit", class="btn btn-default")
+  
+
+

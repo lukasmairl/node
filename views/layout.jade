@@ -1,0 +1,19 @@
+doctype 5
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/libs/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/global.css')
+  body
+    .container
+      .row
+        block content
+
+    script(src="./javascripts/libs/jquery-1.10.2.min.js")
+    script(src="./javascripts/libs/jquery.ui.widget.js")
+    script(src="./javascripts/libs/jquery.iframe-transport.js")
+    script(src="./javascripts/libs/jquery.fileupload.js")
+    script(src="./javascripts/libs/jquery.cloudinary.js")
+    cloudinary.cloudinary_js_config()
+    script(src="./javascripts/index.js")
+    block scripts
