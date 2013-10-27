@@ -1,4 +1,0 @@
-firstname/lastname: asdfsdaf
-email: asdfs@ddd.com
-password: asdfsadfdsa
-image id: undefined

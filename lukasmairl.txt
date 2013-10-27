@@ -1,4 +1,0 @@
-firstname/lastname: lukas mairl
-email: lumotion@gmail.com
-password: mypasswordgera
-image id: wnuj0bwhcfwtexkjntkf

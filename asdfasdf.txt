@@ -1,4 +1,0 @@
-firstname/lastname: asdfasdf
-email: aaaaaaa@ddd.com
-password: asdfasdfasdfadsfdsf
-image id: jospgsxpodirquy5tcwb
