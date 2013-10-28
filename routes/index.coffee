@@ -11,6 +11,7 @@ module.exports = (app) ->
       
       #create empty user object
       user = new User("", "", "", "")
+      
       res.render "index",
         images: items.resources
         cloudinary: cloudinary
@@ -25,7 +26,9 @@ module.exports = (app) ->
     req.assert("email", "Please enter a valid email").isEmail()
     req.assert("password", "Please enter a valid password").notEmpty()
     req.assert("password", "Password too short. Must be 5 characters or more.").len 5
+    
     errors = req.validationErrors()
+    
     email = req.body.email
     name = req.body.name
     imageID = req.body.image_id
@@ -33,6 +36,7 @@ module.exports = (app) ->
     
     #create user object from post values
     user = new User(name, email, password, imageID)
+
     if errors
       res.render "index",
         cloudinary: cloudinary

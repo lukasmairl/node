@@ -1,5 +1,6 @@
 Index = ->
   initImageUploader()
+  
 initImageUploader = ->
   imagePreview = $(".image-preview")
   imageID = $(".image-id")
